@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fama Restaurante | Comida caseira em Vila Progredior</title>
+  <meta name="description" content="Comida caseira, sabor e tradição desde 1993. Conheça o Fama Restaurante em Vila Progredior, São Paulo." />
+  <meta property="og:title" content="Fama Restaurante | São Paulo" />
+  <meta property="og:description" content="Comida caseira, sabor e tradição em São Paulo desde 1993." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}" />
+
+  <!-- Fontes: Lora (títulos, elegante) + Manrope (textos, legível) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <main>
+    <!-- ============ CABEÇALHO ============ -->
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Fama Restaurante — início">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Fama Restaurante desde 1993" />
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Navegação principal">
+        <a href="#sobre">Nossa história</a>
+        <a href="#destaques">Pratos</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn header-cta" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20L%C3%ADcio%20Marcondes%20do%20Amaral%2C%20191%2C%20S%C3%A3o%20Paulo%20SP" target="_blank" rel="noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        Como chegar
+      </a>
+      <button class="btn btn-ghost btn-icon menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <img class="hero-image" src="{{ url_for('static', filename='images/prato-hero.jpg') }}" alt="Prato caseiro do Fama Restaurante" />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-kicker"><span></span> Desde 1993 em São Paulo</span>
+        <h1>Comida caseira,<br /><em>sabor &amp; tradição.</em></h1>
+        <p>Pratos bem servidos, ambiente acolhedor e aquele tempero que faz você se sentir em casa.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#cardapio">Ver cardápio
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-outline btn-lg" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20L%C3%ADcio%20Marcondes%20do%20Amaral%2C%20191%2C%20S%C3%A3o%20Paulo%20SP" target="_blank" rel="noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Como chegar
+          </a>
+        </div>
+      </div>
+      <div class="hero-details" aria-label="Informações rápidas">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span><small>Hoje</small>Café da manhã &amp; almoço</span>
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span><small>Quem visita, recomenda</small>★★★★★ · cerca de 306 avaliações</span>
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L17 13c.7-.7.7-2 0-2.8"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
+          <span><small>Faixa de preço</small>R$ 20–40 por pessoa</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NOSSA HISTÓRIA ============ -->
+    <section class="about section" id="sobre">
+      <div class="about-images">
+        <img class="about-main" src="{{ url_for('static', filename='images/fachada-noite.jpg') }}" alt="Área externa e entrada do Fama Restaurante" />
+        <img class="about-logo" src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo Fama Restaurante desde 1993" />
+        <div class="since"><strong>1993</strong><span>Tradição na região</span></div>
+      </div>
+      <div class="about-copy">
+        <div class="section-heading">
+          <span class="eyebrow">Nossa história</span>
+          <h2>Um lugar para comer bem e se sentir em casa.</h2>
+        </div>
+        <p>Na Vila Progredior, o Fama Restaurante reúne o sabor da comida caseira, atendimento próximo e um ambiente tranquilo para toda a família.</p>
+        <p>Do café da manhã ao almoço, servimos opções variadas, buffet de saladas, pratos tradicionais e alternativas vegetarianas.</p>
+        <div class="about-features">
+          <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Comida caseira</span>
+          <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Ambiente familiar</span>
+          <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Opções vegetarianas</span>
+          <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Atendimento acolhedor</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DESTAQUES ============ -->
+    <section class="dishes section-band" id="destaques">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="eyebrow">Feitos com carinho</span>
+          <h2>Destaques da casa</h2>
+          <p>Receitas que combinam sabor, generosidade e aquele tempero de comida feita de verdade.</p>
+        </div>
+        <div class="dish-grid">
+          <article class="dish-card featured">
+            <img src="{{ url_for('static', filename='images/feijoada.jpg') }}" alt="Feijoada completa" />
+            <div class="dish-content"><span>Especial da casa</span><h3>Feijoada</h3><p>Servida com arroz, couve e acompanhamentos tradicionais.</p></div>
+          </article>
+          <article class="dish-card">
+            <img src="{{ url_for('static', filename='images/prato-hero.jpg') }}" alt="Prato de bife" />
+            <div class="dish-content"><span>Clássico</span><h3>Prato de Bife</h3><p>Uma refeição completa e bem servida, como pede a tradição.</p></div>
+          </article>
+          <article class="dish-card">
+            <img src="{{ url_for('static', filename='images/frango.jpg') }}" alt="Frango ao molho" />
+            <div class="dish-content"><span>Todo dia</span><h3>Frango ao Molho</h3><p>Acompanhado de arroz, feijão e batatas fritas.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CARDÁPIO DIGITAL ============ -->
+    <section class="digital-menu section" id="cardapio">
+      <div class="section-heading">
+        <span class="eyebrow">Nosso cardápio</span>
+        <h2>Comida de casa, preço justo.</h2>
+        <p>Pratos servidos todos os dias, especiais da semana e delivery pelo (11) 95204-4266.</p>
+      </div>
+      <noscript><p class="menu-footnote">Ative o JavaScript no navegador para ver o cardápio completo.</p></noscript>
+      <div class="menu-tabs" id="menu-tabs" role="tablist" aria-label="Categorias do cardápio"></div>
+      <div class="menu-board" id="menu-board" role="tabpanel"></div>
+      <p class="menu-footnote">Valores sujeitos a alteração. Confirme disponibilidade no restaurante.</p>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="gallery-section" id="galeria">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="eyebrow">Do Fama para você</span>
+          <h2>Sabores &amp; momentos</h2>
+        </div>
+        <div class="gallery-grid">
+          <button type="button" aria-label="Ampliar: Prato de bife com arroz, feijão, fritas e salada">
+            <img src="{{ url_for('static', filename='images/prato-hero.jpg') }}" alt="Prato de bife com arroz, feijão, fritas e salada" loading="lazy" />
+          </button>
+          <button type="button" aria-label="Ampliar: Feijoada servida com arroz, couve e farofa">
+            <img src="{{ url_for('static', filename='images/feijoada.jpg') }}" alt="Feijoada servida com arroz, couve e farofa" loading="lazy" />
+          </button>
+          <button type="button" aria-label="Ampliar: Prato de frango ao molho com arroz, feijão e fritas">
+            <img src="{{ url_for('static', filename='images/frango.jpg') }}" alt="Prato de frango ao molho com arroz, feijão e fritas" loading="lazy" />
+          </button>
+          <button type="button" aria-label="Ampliar: Fachada do Fama Restaurante à noite">
+            <img src="{{ url_for('static', filename='images/fachada-noite.jpg') }}" alt="Fachada do Fama Restaurante à noite" loading="lazy" />
+          </button>
+          <button type="button" aria-label="Ampliar: Fachada laranja do Fama Restaurante">
+            <img src="{{ url_for('static', filename='images/fachada-dia.jpg') }}" alt="Fachada laranja do Fama Restaurante" loading="lazy" />
+          </button>
+          <button type="button" aria-label="Ampliar: Prato à parmegiana acompanhado de arroz e fritas">
+            <img src="{{ url_for('static', filename='images/parmegiana.jpg') }}" alt="Prato à parmegiana acompanhado de arroz e fritas" loading="lazy" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AVALIAÇÕES ============ -->
+    <section class="reviews section-band">
+      <div class="section-inner reviews-layout">
+        <div>
+          <div class="section-heading">
+            <span class="eyebrow">Quem vem, recomenda</span>
+            <h2>Comida boa. Preço justo. Atendimento de verdade.</h2>
+          </div>
+          <div class="rating-summary"><strong>5 estrelas</strong><span><span class="stars">★★★★★</span><small>Nos depoimentos em destaque</small></span></div>
+        </div>
+        <div class="review-grid">
+          <blockquote><div class="stars">★★★★★</div><p>“Comida caseira saborosa e com ótimo custo-benefício.”</p><cite>Impressão recorrente dos clientes</cite></blockquote>
+          <blockquote><div class="stars">★★★★★</div><p>“Ambiente aconchegante, organizado e atendimento elogiado.”</p><cite>Impressão recorrente dos clientes</cite></blockquote>
+          <blockquote><div class="stars">★★★★★</div><p>“Boas opções para almoçar bem na região, inclusive vegetarianas.”</p><cite>Impressão recorrente dos clientes</cite></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVIÇOS ============ -->
+    <section class="services section">
+      <div class="section-heading">
+        <span class="eyebrow">Tudo para receber você</span>
+        <h2>Comodidades &amp; serviços</h2>
+      </div>
+      <div class="service-grid">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L17 13c.7-.7.7-2 0-2.8"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
+          <strong>No local e entrega</strong><span>Refeição no salão, entrega e entrega sem contato.</span>
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+          <strong>Pagamento fácil</strong><span>Cartões, NFC, Alelo, Pluxee, Ticket e VR.</span>
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
+          <strong>Wi-Fi gratuito</strong><span>Conectividade disponível para nossos clientes.</span>
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></svg>
+          <strong>Para toda a família</strong><span>Crianças são bem-vindas e há cadeirinhas altas.</span>
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>
+          <strong>Do café ao almoço</strong><span>Café da manhã, almoço, café, bar e sobremesas.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="contact" id="contato">
+      <img src="{{ url_for('static', filename='images/fachada-dia.jpg') }}" alt="Fachada do Fama Restaurante na Vila Progredior" />
+      <div class="contact-panel">
+        <span class="eyebrow">Venha nos visitar</span>
+        <h2>Fama Restaurante</h2>
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          R. Lício Marcondes do Amaral, 191<br />Vila Progredior · São Paulo — SP<br />05616-100
+        </p>
+        <div class="contact-actions">
+          <a class="btn btn-primary btn-lg" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20L%C3%ADcio%20Marcondes%20do%20Amaral%2C%20191%2C%20S%C3%A3o%20Paulo%20SP" target="_blank" rel="noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Como chegar
+          </a>
+          <a class="btn btn-outline btn-lg" href="tel:+5511952044266">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Ligar agora
+          </a>
+        </div>
+        <a class="instagram-link" href="https://instagram.com/fama_restaurante" target="_blank" rel="noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @fama_restaurante
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ RODAPÉ ============ -->
+    <footer>
+      <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Fama Restaurante" />
+      <p>Comida caseira, sabor e tradição desde 1993.</p>
+      <div>
+        <a href="tel:+5511952044266">(11) 95204-4266</a><span>•</span>
+        <a href="https://instagram.com/fama_restaurante" target="_blank" rel="noreferrer">Instagram</a>
+      </div>
+    </footer>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização ampliada" hidden>
+      <button class="btn btn-ghost btn-icon lightbox-close" id="lightbox-close" type="button" aria-label="Fechar imagem">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <button class="btn btn-ghost btn-icon lightbox-prev" id="lightbox-prev" type="button" aria-label="Imagem anterior">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <img id="lightbox-image" src="" alt="Foto ampliada do Fama Restaurante" />
+      <button class="btn btn-ghost btn-icon lightbox-next" id="lightbox-next" type="button" aria-label="Próxima imagem">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

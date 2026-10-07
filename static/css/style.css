@@ -1,0 +1,301 @@
+/* ============================================================
+   Fama Restaurante — style.css
+   Paleta: creme (fundo), terracota (destaques/botões),
+   verde-oliva (detalhe "desde 1993"), marrom-café (textos).
+   Fontes: Lora (títulos) + Manrope (textos) — Google Fonts.
+   ============================================================ */
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.98 0.018 88);        /* creme */
+  --foreground: oklch(0.22 0.035 48);        /* marrom-café */
+  --card: oklch(1 0 0);
+  --primary: oklch(0.62 0.22 35);            /* terracota */
+  --primary-foreground: oklch(0.99 0.01 85);
+  --secondary: oklch(0.43 0.09 143);         /* verde-oliva */
+  --secondary-foreground: oklch(0.99 0.01 85);
+  --muted: oklch(0.94 0.025 82);
+  --muted-foreground: oklch(0.47 0.035 55);
+  --accent: oklch(0.88 0.14 82);             /* mostarda */
+  --accent-foreground: oklch(0.22 0.035 48);
+  --border: oklch(0.86 0.035 75);
+  --input: oklch(0.86 0.035 75);
+  --font-serif: "Lora", ui-serif, Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; border-color: var(--border); }
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+html { scroll-behavior: smooth; }
+h1, h2, h3 { font-family: var(--font-serif); }
+button, a { -webkit-tap-highlight-color: transparent; }
+img { max-width: 100%; }
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  height: 2.25rem;
+  padding: 0 1.1rem;
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px solid transparent;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn svg { width: 1rem; height: 1rem; flex-shrink: 0; }
+.btn-lg { height: 2.5rem; padding: 0 1.5rem; font-size: 0.9rem; }
+.btn-primary { background: var(--primary); color: var(--primary-foreground); }
+.btn-primary:hover { background: color-mix(in oklab, var(--primary) 88%, transparent); }
+.btn-outline { border-color: var(--input); background: var(--background); color: var(--foreground); }
+.btn-outline:hover { background: var(--accent); color: var(--accent-foreground); }
+.btn-ghost { background: transparent; color: var(--foreground); }
+.btn-ghost:hover { background: var(--muted); }
+.btn-icon { width: 2.25rem; height: 2.25rem; padding: 0; }
+
+/* ---------- Cabeçalho ---------- */
+.site-header {
+  position: fixed; inset: 0 0 auto; z-index: 40;
+  height: 76px; display: flex; align-items: center;
+  padding: 0 clamp(1rem, 5vw, 5rem);
+  background: color-mix(in oklab, var(--background) 94%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 65%, transparent);
+  backdrop-filter: blur(14px);
+}
+.brand { display: block; z-index: 2; }
+.brand img { width: 60px; height: 60px; object-fit: cover; border-radius: 50%; }
+.nav-links { margin-left: auto; display: flex; align-items: center; gap: clamp(1.2rem, 2.6vw, 2.5rem); }
+.nav-links a { color: var(--foreground); font-size: 0.82rem; font-weight: 700; text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--primary); }
+.header-cta { margin-left: 2rem; }
+.menu-toggle { display: none; margin-left: auto; }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; min-height: 820px; height: 96vh; max-height: 980px;
+  display: flex; align-items: center; overflow: hidden;
+  color: var(--primary-foreground);
+}
+.hero-image, .hero-overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-image { object-fit: cover; object-position: center; }
+.hero-overlay { background: linear-gradient(90deg, color-mix(in oklab, var(--foreground) 92%, transparent) 0%, color-mix(in oklab, var(--foreground) 65%, transparent) 43%, color-mix(in oklab, var(--foreground) 6%, transparent) 78%); }
+.hero-content { position: relative; z-index: 2; width: min(650px, 88vw); margin-left: clamp(1.2rem, 8vw, 9rem); padding-top: 3rem; }
+.hero-kicker, .eyebrow { display: inline-flex; align-items: center; gap: 0.7rem; color: var(--primary); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.hero-kicker { color: var(--accent); }
+.hero-kicker span { width: 28px; height: 2px; background: currentColor; }
+.hero h1 { margin: 1.1rem 0 1.2rem; font-size: clamp(3.5rem, 6.6vw, 7rem); line-height: 0.96; font-weight: 600; }
+.hero h1 em { color: var(--accent); font-weight: 400; }
+.hero-content > p { max-width: 580px; color: color-mix(in oklab, var(--primary-foreground) 85%, transparent); font-size: clamp(1rem, 1.3vw, 1.25rem); line-height: 1.7; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+.hero-actions .btn-outline { border-color: color-mix(in oklab, var(--primary-foreground) 45%, transparent); background: color-mix(in oklab, var(--foreground) 20%, transparent); color: var(--primary-foreground); }
+.hero-details {
+  position: absolute; z-index: 3; bottom: 0; right: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(190px, 1fr));
+  padding: 1.4rem clamp(2rem, 5vw, 5rem);
+  background: var(--background); color: var(--foreground);
+}
+.hero-details > div { display: flex; gap: 0.8rem; align-items: center; padding: 0 1.8rem; border-left: 1px solid var(--border); }
+.hero-details svg { width: 22px; height: 22px; color: var(--primary); flex-shrink: 0; }
+.hero-details small, .hero-details span { display: block; }
+.hero-details small { margin-bottom: 0.2rem; color: var(--muted-foreground); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; }
+.hero-details span { font-size: 0.78rem; font-weight: 700; }
+
+/* ---------- Seções ---------- */
+.section, .section-inner { width: min(1180px, calc(100% - 2.5rem)); margin-inline: auto; }
+.section { padding-block: clamp(5rem, 9vw, 8rem); }
+.section-band { padding-block: clamp(5rem, 9vw, 8rem); background: var(--muted); }
+.section-heading { max-width: 700px; }
+.section-heading h2 { margin: 0.65rem 0 0.9rem; font-size: clamp(2.3rem, 4.5vw, 4.2rem); line-height: 1.08; font-weight: 500; }
+.section-heading p { color: var(--muted-foreground); line-height: 1.7; }
+
+/* ---------- Nossa história ---------- */
+.about { display: grid; grid-template-columns: 0.95fr 1.05fr; align-items: center; gap: clamp(3rem, 8vw, 7rem); }
+.about-images { position: relative; min-height: 570px; }
+.about-main { width: 80%; height: 520px; object-fit: cover; border-radius: var(--radius); }
+.about-logo { position: absolute; right: 0; bottom: 1rem; width: 48%; aspect-ratio: 1; object-fit: cover; border: 10px solid var(--background); border-radius: var(--radius); }
+.since { position: absolute; left: -1rem; bottom: 2rem; display: flex; flex-direction: column; padding: 1rem 1.4rem; background: var(--secondary); color: var(--secondary-foreground); }
+.since strong { font-family: var(--font-serif); font-size: 2rem; }
+.since span { font-size: 0.7rem; text-transform: uppercase; }
+.about-copy > p { color: var(--muted-foreground); line-height: 1.8; }
+.about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+.about-features span { display: flex; gap: 0.6rem; align-items: center; font-size: 0.85rem; font-weight: 700; }
+.about-features svg { width: 18px; height: 18px; color: var(--primary); flex-shrink: 0; }
+
+/* ---------- Destaques ---------- */
+.dishes .section-heading { text-align: center; margin-inline: auto; }
+.dish-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 1.2rem; margin-top: 3rem; }
+.dish-card { overflow: hidden; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 14px 35px color-mix(in oklab, var(--foreground) 8%, transparent); transition: transform 0.25s; }
+.dish-card:hover { transform: translateY(-5px); }
+.dish-card img { width: 100%; height: 280px; object-fit: cover; }
+.dish-card.featured img { height: 320px; }
+.dish-content { padding: 1.35rem; }
+.dish-content > span { color: var(--primary); font-size: 0.67rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; }
+.dish-content h3 { margin: 0.35rem 0; font-size: 1.65rem; font-weight: 500; }
+.dish-content p { margin: 0; color: var(--muted-foreground); font-size: 0.84rem; line-height: 1.6; }
+
+/* ---------- Cardápio digital ---------- */
+.menu-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 2rem 0 1.5rem; }
+.menu-tabs button { padding: 0.6rem 1.1rem; border: 1px solid var(--border); border-radius: 999px; background: var(--card); font-family: var(--font-sans); font-weight: 700; font-size: 0.85rem; color: var(--foreground); cursor: pointer; transition: background 0.2s, color 0.2s; }
+.menu-tabs button:hover { border-color: var(--primary); }
+.menu-tabs button.is-active { background: var(--primary); color: var(--primary-foreground); border-color: var(--primary); }
+.menu-board { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 1.5rem; }
+.menu-group { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(1.25rem, 3vw, 2rem); box-shadow: 0 12px 30px color-mix(in oklab, var(--foreground) 6%, transparent); }
+.menu-group-head { display: flex; justify-content: space-between; align-items: end; gap: 1rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.6rem; }
+.menu-group h3 { font-family: var(--font-serif, serif); font-size: 1.35rem; }
+.menu-cols, .menu-prices { display: flex; gap: 0.5rem; }
+.menu-cols span { width: 4.6rem; text-align: right; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted-foreground); font-weight: 700; }
+.menu-group ul { list-style: none; margin: 0.5rem 0 0; padding: 0; }
+.menu-item { display: flex; align-items: baseline; gap: 0.5rem; padding: 0.7rem 0; border-bottom: 1px dashed var(--border); }
+.menu-item:last-child { border-bottom: 0; }
+.menu-item-text { display: flex; flex-direction: column; min-width: 0; }
+.menu-item-text strong { font-size: 0.95rem; }
+.menu-item-text em { margin-left: 0.5rem; font-style: normal; font-size: 0.65rem; padding: 0.1rem 0.45rem; border-radius: 999px; background: var(--muted); color: var(--primary); vertical-align: middle; }
+.menu-item-text span { font-size: 0.8rem; color: var(--muted-foreground); }
+.menu-dots { flex: 1; }
+.menu-prices span { width: 4.6rem; text-align: right; font-weight: 800; color: var(--primary); white-space: nowrap; font-size: 0.9rem; }
+.menu-note { font-size: 0.78rem; color: var(--muted-foreground); }
+.menu-footnote { margin-top: 1.5rem; font-size: 0.78rem; color: var(--muted-foreground); text-align: center; }
+
+/* ---------- Galeria ---------- */
+.gallery-section { padding-block: clamp(5rem, 9vw, 8rem); background: var(--foreground); color: var(--primary-foreground); }
+.gallery-section .section-heading { text-align: center; margin: 0 auto 3rem; }
+.gallery-section .eyebrow { color: var(--accent); }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 230px; gap: 0.65rem; }
+.gallery-grid button { cursor: zoom-in; padding: 0; border: 0; overflow: hidden; background: var(--foreground); }
+.gallery-grid button:first-child { grid-column: span 2; grid-row: span 2; }
+.gallery-grid button:nth-child(4) { grid-column: span 2; }
+.gallery-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.gallery-grid button:hover img { transform: scale(1.04); }
+
+/* ---------- Avaliações ---------- */
+.reviews-layout { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 5rem; align-items: center; }
+.rating-summary { display: flex; align-items: center; gap: 1rem; margin-top: 1.6rem; }
+.rating-summary > strong { max-width: 9rem; font-family: var(--font-serif); font-size: 2.6rem; line-height: 1; font-weight: 500; }
+.rating-summary span, .rating-summary small { display: block; }
+.stars { color: var(--primary); letter-spacing: 0.08em; }
+.rating-summary small { margin-top: 0.3rem; color: var(--muted-foreground); }
+.review-grid { display: grid; gap: 1rem; }
+blockquote { margin: 0; padding: 1.5rem; background: var(--card); border-left: 3px solid var(--primary); }
+blockquote p { font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.5; }
+blockquote cite { color: var(--muted-foreground); font-size: 0.7rem; font-style: normal; }
+
+/* ---------- Serviços ---------- */
+.services .section-heading { text-align: center; margin-inline: auto; }
+.service-grid { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 3rem; border-block: 1px solid var(--border); }
+.service-grid > div { display: flex; flex-direction: column; gap: 0.7rem; padding: 2rem 1.3rem; border-left: 1px solid var(--border); }
+.service-grid > div:first-child { border-left: 0; }
+.service-grid svg { width: 22px; height: 22px; color: var(--primary); }
+.service-grid strong { font-size: 0.9rem; }
+.service-grid span { color: var(--muted-foreground); font-size: 0.72rem; line-height: 1.6; }
+
+/* ---------- Contato ---------- */
+.contact { display: grid; grid-template-columns: 1.15fr 0.85fr; min-height: 630px; background: var(--foreground); color: var(--primary-foreground); }
+.contact > img { width: 100%; height: 100%; object-fit: cover; }
+.contact-panel { display: flex; flex-direction: column; justify-content: center; padding: clamp(2.5rem, 7vw, 6rem); }
+.contact-panel .eyebrow { color: var(--accent); }
+.contact-panel h2 { margin: 0.7rem 0 1.5rem; font-size: clamp(2.5rem, 4vw, 4.5rem); font-weight: 500; }
+.contact-panel > p { display: flex; gap: 0.7rem; line-height: 1.8; }
+.contact-panel > p svg { width: 20px; height: 20px; flex-shrink: 0; margin-top: 0.3rem; }
+.contact-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 2rem 0; }
+.contact-actions .btn-outline { background: transparent; color: var(--primary-foreground); border-color: color-mix(in oklab, var(--primary-foreground) 35%, transparent); }
+.instagram-link { display: flex; align-items: center; gap: 0.7rem; width: fit-content; padding-top: 1.2rem; color: inherit; text-decoration: none; border-top: 1px solid color-mix(in oklab, var(--primary-foreground) 25%, transparent); }
+.instagram-link svg { width: 18px; height: 18px; }
+.instagram-link svg:last-child { margin-left: 1rem; }
+
+/* ---------- Rodapé ---------- */
+footer { display: flex; flex-direction: column; align-items: center; padding: 3rem 1rem; text-align: center; background: var(--foreground); color: var(--primary-foreground); }
+footer img { width: 90px; height: 90px; object-fit: cover; border-radius: 50%; }
+footer p { color: color-mix(in oklab, var(--primary-foreground) 65%, transparent); font-family: var(--font-serif); }
+footer div { display: flex; gap: 0.7rem; font-size: 0.74rem; }
+footer a { color: inherit; text-decoration: none; }
+
+/* ---------- Lightbox ---------- */
+.lightbox { position: fixed; inset: 0; z-index: 70; display: flex; align-items: center; justify-content: center; padding: 4rem; background: color-mix(in oklab, var(--foreground) 96%, transparent); }
+.lightbox[hidden] { display: none; }
+.lightbox > img { max-width: min(1100px, 88vw); max-height: 86vh; object-fit: contain; }
+.lightbox button { position: absolute; color: var(--primary-foreground); background: color-mix(in oklab, var(--primary-foreground) 10%, transparent); }
+.lightbox button:hover { background: color-mix(in oklab, var(--primary-foreground) 20%, transparent); }
+.lightbox-close { top: 1.5rem; right: 1.5rem; }
+.lightbox-prev { left: 1.5rem; }
+.lightbox-next { right: 1.5rem; }
+
+/* ---------- Responsivo: tablet ---------- */
+@media (max-width: 900px) {
+  .header-cta { display: none; }
+  .menu-toggle { display: inline-flex; }
+  .nav-links {
+    position: absolute; inset: 75px 0 auto;
+    display: none; flex-direction: column; align-items: flex-start; gap: 0;
+    padding: 1rem 1.5rem 1.5rem;
+    background: var(--background); border-bottom: 1px solid var(--border);
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links a { width: 100%; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
+  .hero { min-height: 760px; height: 100svh; align-items: flex-start; padding-top: 11rem; }
+  .hero-image { object-position: 68% center; }
+  .hero-overlay { background: linear-gradient(90deg, color-mix(in oklab, var(--foreground) 94%, transparent) 0%, color-mix(in oklab, var(--foreground) 65%, transparent) 65%, color-mix(in oklab, var(--foreground) 15%, transparent)); }
+  .hero-content { margin-left: 1.25rem; }
+  .hero-details { left: 0; right: 0; grid-template-columns: 1fr; padding: 0.9rem 1.2rem; }
+  .hero-details > div { padding: 0.45rem 0; border-left: 0; border-top: 1px solid var(--border); }
+  .hero-details > div:first-child { border-top: 0; }
+  .about, .reviews-layout, .contact { grid-template-columns: 1fr; }
+  .about-images { min-height: 460px; }
+  .about-main { height: 420px; }
+  .dish-grid { grid-template-columns: 1fr 1fr; }
+  .dish-card:first-child { grid-column: span 2; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 210px; }
+  .gallery-grid button:nth-child(4) { grid-column: auto; }
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-grid > div { border: 0; border-bottom: 1px solid var(--border); }
+  .contact { min-height: 0; }
+  .contact > img { height: 430px; }
+}
+
+/* ---------- Responsivo: celular ---------- */
+@media (max-width: 560px) {
+  .site-header { height: 68px; }
+  .brand img { width: 52px; height: 52px; }
+  .nav-links { top: 67px; }
+  .hero { padding-top: 8.5rem; }
+  .hero h1 { font-size: 3.35rem; }
+  .hero-content > p { font-size: 0.95rem; }
+  .hero-actions a { width: 100%; }
+  .about { padding-top: 4.5rem; }
+  .about-images { min-height: 400px; }
+  .about-main { width: 88%; height: 360px; }
+  .about-logo { width: 45%; border-width: 6px; }
+  .since { left: 0; }
+  .about-features { grid-template-columns: 1fr; }
+  .dish-grid { grid-template-columns: 1fr; }
+  .dish-card:first-child { grid-column: auto; }
+  .dish-card img, .dish-card.featured img { height: 290px; }
+  .menu-cols span, .menu-prices span { width: 3.9rem; font-size: 0.8rem; }
+  .gallery-grid { grid-auto-rows: 170px; }
+  .gallery-grid button:first-child { grid-column: span 2; grid-row: span 1; }
+  .service-grid { grid-template-columns: 1fr; }
+  .contact > img { height: 320px; }
+  .contact-actions a { width: 100%; }
+  .lightbox { padding: 3rem 1rem; }
+  .lightbox-prev { left: 0.5rem; }
+  .lightbox-next { right: 0.5rem; }
+}
+
+/* ---------- Acessibilidade: menos animação ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
